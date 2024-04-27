@@ -1,10 +1,12 @@
-from django.db.models.signals import post_save, post_delete, pre_save, pre_delete
+from django.db.models.signals import post_save, post_delete, pre_save
 from django.dispatch import receiver
-from django.db.models import Sum
 from .models import Motorcycle, MotorcycleManufacturer, MotorcycleInventory
 
 
 def motorcycle_inventory_update():
+    """Function to update the motorcycle inventory.
+    To keep track of the total number of motorcycles in the inventory.
+    """
     motorcycle_count = Motorcycle.objects.all().count()
     MotorcycleInventory.objects.create(
         motorcycle_count=motorcycle_count)
