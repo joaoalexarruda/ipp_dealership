@@ -13,3 +13,4 @@ def location(request):
 
 def about(request):
     return render(request, 'pages/about.html')
+
