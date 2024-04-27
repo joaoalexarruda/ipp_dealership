@@ -83,6 +83,12 @@
                                 </button>
                             {% endif %}
                             {% if user.is_authenticated %}
+                                {% if user.is_staff %}
+                                    <button class="btn btn-danger" type="submit">
+                                        <a href="{% url "admin:index" %}"
+                                           class="text-decoration-none text-light">ADMIN PANEL</a>
+                                    </button>
+                                {% endif %}
                                 <button class="btn btn-outline-dark" type="submit">
                                     {% if user.is_staff %}<i class="fa-solid fa-user-tie"></i>{% endif %}
                                     {% if not user.is_staff %}<i class="fa-regular fa-user"></i>{% endif %}
