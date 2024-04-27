@@ -9,7 +9,7 @@ class MotorcycleListView(ListView):
     model = Motorcycle
     template_name = 'motorcycles/motorcycle_list.html'
     context_object_name = 'motorcycle_list'
-    paginate_by = 10
+    paginate_by = 12
 
     def get_queryset(self):
         queryset = super().get_queryset().order_by('model')
