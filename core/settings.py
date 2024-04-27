@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'cars',
     'motorcycles',
     'accounts',
+    'pages',
     # Django apps
     'django.contrib.admin',
     'django.contrib.auth',

@@ -21,7 +21,7 @@
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{% url "index" %}">
                         <img src="https://imgur.com/dIIfYB1.png"
                              alt="ipp"
                              width="30"
@@ -40,7 +40,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="{% url "index" %}">IPP Dealership</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle"
@@ -53,7 +53,7 @@
                                         <a class="dropdown-item" href="#">Cars</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">Motorcycles</a>
+                                        <a class="dropdown-item" href="{% url "motorcycle_list" %}">Motorcycles</a>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
@@ -66,7 +66,10 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Location</a>
+                                <a class="nav-link" href="{% url "location" %}">Location</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url "about" %}">About</a>
                             </li>
                         </ul>
                         <div>
