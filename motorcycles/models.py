@@ -44,7 +44,6 @@ class Motorcycle(models.Model):
 
 class MotorcycleInventory(models.Model):
     motorcycle_count = models.IntegerField()
-    motorcycle_total_value = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
