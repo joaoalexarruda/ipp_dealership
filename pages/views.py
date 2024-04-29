@@ -7,10 +7,6 @@ def index(request):
     return render(request, 'pages/index.html')
 
 
-def location(request):
-    return render(request, 'pages/location.html')
-
-
 def about(request):
     return render(request, 'pages/about.html')
 
