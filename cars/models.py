@@ -16,5 +16,5 @@ class Car(models.Model):
     doors = models.IntegerField(blank=True, null=True)
     quilometers = models.IntegerField(blank=True, null=True)
 
-def __str__(self)
+def __str__(self):
     return self.model
