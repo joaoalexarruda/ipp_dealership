@@ -1,7 +1,12 @@
-from django.views.generic import ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, UpdateView
+
+from motorcycles.forms import MotorcycleModelForm
 from .models import Motorcycle
 from django.db.models import Q
 from django.utils.decorators import method_decorator
+from django.contrib.admin.views.decorators import staff_member_required
+
 
 # Create your views here.
 
@@ -28,3 +33,13 @@ class MotorcycleDetailView(DetailView):
     model = Motorcycle
     template_name = 'motorcycles/motorcycle_detail.html'
     context_object_name = 'motorcycle_detail'
+
+
+@method_decorator(staff_member_required, name='dispatch')
+class MotorcycleUpdateView(UpdateView):
+    model = Motorcycle
+    form_class = MotorcycleModelForm
+    template_name = 'motorcycles/motorcycle_update.html'
+
+    def get_success_url(self):
+        return reverse_lazy('motorcycle_detail', kwargs={'pk': self.object.pk})
