@@ -15,6 +15,5 @@ class Car(models.Model):
     gearbox = models.CharField(max_length=200)
     doors = models.IntegerField(blank=True, null=True)
     quilometers = models.IntegerField(blank=True, null=True)
-
-def __str__(self):
-    return self.model
+    def __str__(self): 
+        return self.model
