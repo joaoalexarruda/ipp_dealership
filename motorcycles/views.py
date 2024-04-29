@@ -1,6 +1,7 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Motorcycle
 from django.db.models import Q
+from django.utils.decorators import method_decorator
 
 # Create your views here.
 
@@ -21,3 +22,9 @@ class MotorcycleListView(ListView):
                 Q(engine_size__icontains=search)
             )
         return queryset
+
+
+class MotorcycleDetailView(DetailView):
+    model = Motorcycle
+    template_name = 'motorcycles/motorcycle_detail.html'
+    context_object_name = 'motorcycle_detail'
