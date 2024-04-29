@@ -48,7 +48,8 @@
                             <div class="text-center mt-3">
                                 <a href="{% url 'motorcycle_update' pk=object.pk %}"
                                    class="btn btn-primary mr-3">Edit</a>
-                                <a href="" class="btn btn-danger">Delete</a>
+                                <a href="{% url "motorcycle_delete" pk=object.pk %}"
+                                   class="btn btn-danger">Delete</a>
                             </div>
                         {% endif %}
                     </div>

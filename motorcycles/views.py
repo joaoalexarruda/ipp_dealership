@@ -1,6 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, UpdateView
-
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from motorcycles.forms import MotorcycleModelForm
 from .models import Motorcycle
 from django.db.models import Q
@@ -43,3 +42,10 @@ class MotorcycleUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('motorcycle_detail', kwargs={'pk': self.object.pk})
+
+
+@method_decorator(staff_member_required, name='dispatch')
+class MotorcycleDeleteView(DeleteView):
+    model = Motorcycle
+    template_name = 'motorcycles/motorcycle_delete.html'
+    success_url = reverse_lazy('motorcycle_list')
