@@ -43,28 +43,16 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{% url "index" %}">IPP Dealership</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle"
-                                   href="#"
-                                   role="button"
-                                   data-bs-toggle="dropdown"
-                                   aria-expanded="false">Vehicles</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#">Cars</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="{% url "motorcycle_list" %}">Motorcycles</a>
-                                    </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item"
-                                           target="_blank"
-                                           href="https://youtu.be/dQw4w9WgXcQ?si=dUD2gq5lxFB-rw1z&t=43">Spaceships</a>
-                                    </li>
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa-solid fa-car"></i> Cars</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url "motorcycle_list" %}"><i class="fa-solid fa-motorcycle"></i> Motorcycles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   target="_blank"
+                                   href="https://youtu.be/dQw4w9WgXcQ?si=dUD2gq5lxFB-rw1z&t=43">Spaceships</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url "location" %}">Location</a>
@@ -72,6 +60,23 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url "about" %}">About</a>
                             </li>
+                            {% if user.is_staff %}
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-danger"
+                                       href="#"
+                                       role="button"
+                                       data-bs-toggle="dropdown"
+                                       aria-expanded="false">ADD NEW VEHICLE</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#">Car</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="{% url "motorcycle_create" %}">Motorcycle</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            {% endif %}
                         </ul>
                         <div>
                             {% if not user.is_authenticated %}
