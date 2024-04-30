@@ -1,1 +1,68 @@
 {% extends "base.html" %}
+
+{% block title %}
+    {{ object.model }}
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        {% if object.image %}
+                            <img class="card-img-top"
+                                 src="{{ object.image.url }}"
+                                 alt="{{ object.model }} - {{ object.brand }}">
+                        {% else %}
+                            <img class="card-img-top"
+                                 src="https://via.placeholder.com/300"
+                                 alt="Foto não disponível">
+                        {% endif %}
+                        <h5 class="card-title text-center">{{ object.brand }} {{ object.model }}</h5>
+                        <div class="text-left">
+                            <p class="card-text">
+                                <strong>Production year:</strong> {{ object.production_year }}
+                            </p>
+                            <p class="card-text">
+                                <strong>Model year:</strong> {{ object.model_year }}
+                            </p>
+                            <p class="card-text">
+                                <strong>Transmission:</strong> {{ object.transmission }}
+                            </p>
+                            <p class="card-text">
+                                <strong>Category:</strong> {{ object.car_type }}
+                            </p>
+                            <p class="card-text">
+                                <strong>Fuel:</strong> {{ object.fuel }}
+                            </p>
+                            <p class="card-text">
+                                <strong>Number of doors:</strong> {{ object.doors }}
+                            </p>
+                            <p class="card-text">
+                                <strong>Color:</strong> {{ object.color }}
+                            </p>
+                            <p class="card-text">
+                                <strong>Kilometrage:</strong> {{ object.kilometrage }} km
+                            </p>
+                            <p class="card-text">
+                                <strong>Price:</strong> R$ {{ object.price }}
+                            </p>
+                            {% if object.description %}
+                                <p class="card-text">
+                                    <strong>Description:</strong> {{ object.description }}
+                                </p>
+                            {% endif %}
+                        </div>
+                        {% if user.is_staff %}
+                            <div class="text-center mt-3">
+                                <a href="{% url 'car_update' pk=object.pk %}"
+                                   class="btn btn-primary mr-3">Edit</a>
+                                <a href="{% url "car_delete" pk=object.pk %}" class="btn btn-danger">Delete</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
