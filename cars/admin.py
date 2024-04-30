@@ -1,14 +1,25 @@
 from django.contrib import admin
-from cars.models import Car, Brand
+from cars.models import Car, CarBrand, CarType
 
-class BrandAdmin(admin.ModelAdmin): 
+
+class CarBrandAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
+    ordering = ('name',)
+
+
+class CarTypeAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    search_fields = ('name',)
+    ordering = ('name',)
+
 
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('model', 'brand', 'factory_year', 'model_year', 'value', 'body_type', "power", "cylinder_number", "fuel", "gearbox", "doors", "quilometers")
-    search_fields = ('model','brand')
+    list_display = ('brand', 'model', 'car_type', 'production_year')
+    search_fields = ('brand', 'model', 'car_type', 'production_year')
+    ordering = ('brand', 'model', 'car_type', 'production_year')
 
-admin.site.register(Brand, BrandAdmin)
+
+admin.site.register(CarBrand, CarBrandAdmin)
+admin.site.register(CarType, CarTypeAdmin)
 admin.site.register(Car, CarAdmin)
-
