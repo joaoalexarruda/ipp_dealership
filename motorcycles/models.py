@@ -28,8 +28,8 @@ class Motorcycle(models.Model):
     engine_size = models.IntegerField(blank=True, null=True)
     motorcycle_type = models.ForeignKey(
         MotorcycleType, on_delete=models.PROTECT, related_name='motorcycle_type')
-    production_year = models.IntegerField(blank=True, null=True)
-    model_year = models.IntegerField(blank=False, null=False)
+    production_year = models.IntegerField(blank=False, null=False)
+    model_year = models.IntegerField(blank=True, null=True)
     color = models.CharField(max_length=50, blank=False, null=False)
     kilometrage = models.IntegerField(blank=True, null=True)
     price = models.DecimalField(

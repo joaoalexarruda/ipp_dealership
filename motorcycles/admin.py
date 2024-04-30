@@ -19,11 +19,13 @@ class MotorcycleTypeAdmin(admin.ModelAdmin):
 
 class MotorcycleAdmin(admin.ModelAdmin):
     list_display = ('manufacturer', 'model', 'engine_size',
-                    'motorcycle_type', 'model_year')
+                    'motorcycle_type', 'production_year')
+    
     search_fields = ('manufacturer', 'model', 'engine_size',
-                     'motorcycle_type', 'model_year')
+                     'motorcycle_type', 'production_year')
+    
     ordering = ('manufacturer', 'model', 'engine_size',
-                'motorcycle_type', 'model_year')
+                'motorcycle_type', 'production_year')
 
 
 admin.site.register(MotorcycleManufacturer, MotorcycleManufacturerAdmin)

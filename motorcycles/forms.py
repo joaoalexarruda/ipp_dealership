@@ -8,11 +8,17 @@ class MotorcycleModelForm(forms.ModelForm):
         model = Motorcycle
         fields = '__all__'
 
-    def clean_year(self):
-        year = self.cleaned_data['year']
-        if year < 1970 or year > datetime.now().year:
+    def clean_production_year(self):
+        production_year = self.cleaned_data['production_year']
+        if production_year < 1970 or production_year > datetime.now().year:
             raise forms.ValidationError('Invalid year')
-        return year
+        return production_year
+
+    def clean_model_year(self):
+        model_year = self.cleaned_data['model_year']
+        if model_year < 1970 or model_year > datetime.now().year:
+            raise forms.ValidationError('Invalid year')
+        return model_year
 
     def clean_engine_size(self):
         engine_size = self.cleaned_data['engine_size']
@@ -25,3 +31,9 @@ class MotorcycleModelForm(forms.ModelForm):
         if price < 0:
             raise forms.ValidationError('Invalid price')
         return price
+    
+    def clean_kilometrage(self):
+        kilometrage = self.cleaned_data['kilometrage']
+        if kilometrage < 0:
+            raise forms.ValidationError('Invalid kilometrage')
+        return kilometrage
