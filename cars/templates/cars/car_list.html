@@ -25,12 +25,14 @@
                             {% if car.image %}
                                 <img class="card-img-top"
                                      src="{{ car.image.url }}"
-                                     height="250"
+                                     style="height: 250px;
+                                            object-fit: cover"
                                      alt="{{ car.model }} - {{ car.brand }}">
                             {% else %}
                                 <img class="card-img-top"
                                      src="https://via.placeholder.com/300"
-                                     height="250"
+                                     style="height: 250px;
+                                            object-fit: cover"
                                      alt="Placeholder Image">
                             {% endif %}
                             <div class="card-body">

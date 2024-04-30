@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,6 +19,7 @@
               rel="stylesheet"
               integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
               crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
     </head>
     <body class="d-flex flex-column min-vh-100">
         <header>
@@ -88,7 +91,7 @@
                                 {% if user.is_staff %}
                                     <button class="btn btn-danger" type="submit">
                                         <a href="{% url "admin:index" %}"
-                                           class="text-decoration-none text-light">ADMIN PANEL</a>
+                                           class="text-decoration-none text-light">ADMIN</a>
                                     </button>
                                 {% endif %}
                                 <button class="btn btn-outline-dark" type="submit">
