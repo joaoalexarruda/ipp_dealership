@@ -36,7 +36,14 @@
                                      alt="Placeholder Image">
                             {% endif %}
                             <div class="card-body">
-                                <h5 class="card-title">{{ car.brand }} {{ car.model }} {{ car.transmission }}</h5>
+                                <h5 class="card-title">
+                                    {{ car.brand }} {{ car.model }}
+                                    {% if car.transmission == 'A' %}
+                                        <span class="badge bg-success">Automatic</span>
+                                    {% elif car.transmission == 'M' %}
+                                        <span class="badge bg-primary">Manual</span>
+                                    {% endif %}
+                                </h5>
                                 <p class="card-text">Model Year: {{ car.model_year }}</p>
                                 <p class="card-text">Price: R$ {{ car.price }}</p>
                             </div>

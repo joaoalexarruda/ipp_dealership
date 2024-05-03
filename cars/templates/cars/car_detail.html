@@ -27,13 +27,31 @@
                                 <strong>Model year:</strong> {{ object.model_year }}
                             </p>
                             <p class="card-text">
-                                <strong>Transmission:</strong> {{ object.transmission }}
+                                <strong>Transmission:</strong>
+                                {% if object.transmission == 'A' %}
+                                    <span class="badge bg-success">Automatic</span>
+                                {% elif object.transmission == 'M' %}
+                                    <span class="badge bg-primary">Manual</span>
+                                {% endif %}
                             </p>
                             <p class="card-text">
                                 <strong>Category:</strong> {{ object.car_type }}
                             </p>
                             <p class="card-text">
-                                <strong>Fuel:</strong> {{ object.fuel }}
+                                <strong>Fuel:</strong>
+                                {% if object.fuel == 'G' %}
+                                    Gasoline
+                                {% elif object.fuel == 'A' %}
+                                    Alcohol
+                                {% elif object.fuel == 'D' %}
+                                    Diesel
+                                {% elif object.fuel == 'F' %}
+                                    Flex
+                                {% elif object.fuel == 'E' %}
+                                    Electric
+                                {% elif object.fuel == 'H' %}
+                                    Hybrid
+                                {% endif %}
                             </p>
                             <p class="card-text">
                                 <strong>Number of doors:</strong> {{ object.doors }}

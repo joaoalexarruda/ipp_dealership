@@ -9,7 +9,7 @@ class CarModelForm(forms.ModelForm):
         fields = '__all__'
 
     def clean_production_year(self):
-        production_year = self.cleaned_data['year']
+        production_year = self.cleaned_data['production_year']
         if production_year < 1970 or production_year > datetime.now().year:
             raise forms.ValidationError('Invalid year')
         return production_year
