@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+    IPP Dealership Register
+{% endblock title %}
+{% block content %}
+    <div class="container d-flex align-items-center justify-content-center"
+         style="height: 100vh">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Adjusted from col-md-6 to col-lg-10 -->
+                <div class="card">
+                    <div class="card-header bg-dark text-light">
+                        <h3 class="mb-0">Register</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {% for field in user_form %}
+                                <div class="form-group">
+                                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                    <input type="{{ field.field.widget.input_type }}"
+                                           class="form-control"
+                                           id="{{ field.id_for_label }}"
+                                           name="{{ field.html_name }}"
+                                           value="{{ field.value|default:'' }}">
+                                    {% if field.help_text %}<small class="form-text text-muted">{{ field.help_text }}</small>{% endif %}
+                                    {% for error in field.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
+                                </div>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-dark">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

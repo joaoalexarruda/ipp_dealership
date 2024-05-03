@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+    IPP Dealership
+{% endblock title %}
+{% block content %}
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <div class="row align-items-center">
+            <div class="container" style="width: 18rem;">
+                <img src="https://imgur.com/r0bouLH.png"  class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Cars</h5>
+                    <p class="card-text">Check out our collection of cars. We have a wide variety of cars to choose from.</p>
+                    <a href="{% url "car_list" %}" class="btn btn-warning">Browse cars</a>
+                </div>
+            </div>
+            <div class="container" style="width: 18rem;">
+                <img src="https://imgur.com/1izmcc7.png"  class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Motorcycles</h5>
+                    <p class="card-text">From cruisers to sport bikes, we have a wide variety of motorcycles to choose from.</p>
+                    <a href="{% url "motorcycle_list" %}" class="btn btn-warning">Browse motorcyles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
