@@ -18,7 +18,7 @@ It's a work in progress and more features will be added in the future. The main 
 - Django REST Framework
 - SQLite
 - HTML
-- CSS
+- CSS (Bootstrap)
 - JavaScript
 
 ## Features
