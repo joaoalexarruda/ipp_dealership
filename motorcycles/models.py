@@ -39,7 +39,8 @@ class Motorcycle(models.Model):
     model_year = models.IntegerField(blank=True, null=True)
     color = models.CharField(max_length=50, blank=False, null=False)
     kilometrage = models.IntegerField(blank=True, null=True)
-    fuel = models.CharField(max_length=1, choices=FUEL_CHOICES, blank=True, null=True)
+    fuel = models.CharField(
+        max_length=1, choices=FUEL_CHOICES, blank=True, null=True)
     price = models.DecimalField(
         max_digits=10, decimal_places=2, blank=False, null=False)
     image = models.ImageField(
