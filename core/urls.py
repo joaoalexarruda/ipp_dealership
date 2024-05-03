@@ -10,6 +10,7 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('', include('cars.urls')),
     path('api/v1/', include('api.urls')),
+    path('api/v1/auth/', include('authentication.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
