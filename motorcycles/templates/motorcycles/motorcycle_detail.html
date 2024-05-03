@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load humanize %}
+
 {% block title %}
     {{ object.model }}
 {% endblock title %}
@@ -36,7 +38,7 @@
                                 <strong>Kilometrage:</strong> {{ object.kilometrage }} km
                             </p>
                             <p class="card-text">
-                                <strong>Price:</strong> R$ {{ object.price }}
+                                <strong>Price:</strong> R$ {{ object.price|intcomma }}
                             </p>
                             {% if object.description %}
                                 <p class="card-text">

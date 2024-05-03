@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load humanize %}
+
 {% block title %}
     IPP Car
 {% endblock title %}
@@ -45,7 +47,7 @@
                                     {% endif %}
                                 </h5>
                                 <p class="card-text">Model Year: {{ car.model_year }}</p>
-                                <p class="card-text">Price: R$ {{ car.price }}</p>
+                                <p class="card-text">Price: R$ {{ car.price|intcomma }}</p>
                             </div>
                         </div>
                     </a>

@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load humanize %}
+
 {% block title %}
     IPP Motorcycles
 {% endblock title %}
@@ -40,7 +42,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ motorcycle.manufacturer }} {{ motorcycle.model }} {{ motorcycle.engine_size }}</h5>
                                 <p class="card-text">Model Year: {{ motorcycle.model_year }}</p>
-                                <p class="card-text">Price: R$ {{ motorcycle.price }}</p>
+                                <p class="card-text">Price: R$ {{ motorcycle.price|intcomma }}</p>
                             </div>
                         </div>
                     </a>
