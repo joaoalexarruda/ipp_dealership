@@ -19,7 +19,6 @@ It's a work in progress and more features will be added in the future. The main 
 - SQLite
 - HTML
 - CSS (Bootstrap)
-- JavaScript
 
 ## Features
 
