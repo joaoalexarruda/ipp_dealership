@@ -6,8 +6,6 @@ from django.db.models import Q
 from django.utils.decorators import method_decorator
 from django.contrib.admin.views.decorators import staff_member_required
 
-# Create your views here.
-
 
 class CarListView(ListView):
     model = Car

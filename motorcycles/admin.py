@@ -1,8 +1,5 @@
 from django.contrib import admin
-
 from motorcycles.models import Motorcycle, MotorcycleManufacturer, MotorcycleType
-
-# Register your models here.
 
 
 class MotorcycleManufacturerAdmin(admin.ModelAdmin):

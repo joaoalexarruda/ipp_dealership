@@ -1,6 +1,6 @@
 from django.db import models
 
-# Variables for the choices in the Car model
+
 TRANSMISSION_CHOICES = [
     ('M', 'Manual'),
     ('A', 'Automatic'),
@@ -13,10 +13,7 @@ FUEL_CHOICES = [
     ('D', 'Diesel'),
     ('H', 'Hybrid'),
     ('E', 'Electric'),
-    # Add more fuel types as needed
 ]
-
-# Create your models here.
 
 
 class CarBrand(models.Model):
