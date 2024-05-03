@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'motorcycles',
     'accounts',
     'pages',
+    'api',
     # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
