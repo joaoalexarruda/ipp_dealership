@@ -3,26 +3,41 @@ from motorcycles.models import Motorcycle, MotorcycleManufacturer, MotorcycleTyp
 
 
 class MotorcycleManufacturerAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-    search_fields = ('name',)
-    ordering = ('name',)
+    list_display = ("name",)
+    search_fields = ("name",)
+    ordering = ("name",)
 
 
 class MotorcycleTypeAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-    search_fields = ('name',)
-    ordering = ('name',)
+    list_display = ("name",)
+    search_fields = ("name",)
+    ordering = ("name",)
 
 
 class MotorcycleAdmin(admin.ModelAdmin):
-    list_display = ('manufacturer', 'model', 'engine_size',
-                    'motorcycle_type', 'production_year')
+    list_display = (
+        "manufacturer",
+        "model",
+        "engine_size",
+        "motorcycle_type",
+        "production_year",
+    )
 
-    search_fields = ('manufacturer', 'model', 'engine_size',
-                     'motorcycle_type', 'production_year')
+    search_fields = (
+        "manufacturer",
+        "model",
+        "engine_size",
+        "motorcycle_type",
+        "production_year",
+    )
 
-    ordering = ('manufacturer', 'model', 'engine_size',
-                'motorcycle_type', 'production_year')
+    ordering = (
+        "manufacturer",
+        "model",
+        "engine_size",
+        "motorcycle_type",
+        "production_year",
+    )
 
 
 admin.site.register(MotorcycleManufacturer, MotorcycleManufacturerAdmin)

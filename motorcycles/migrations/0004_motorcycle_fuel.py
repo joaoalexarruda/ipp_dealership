@@ -6,13 +6,25 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('motorcycles', '0003_alter_motorcycle_model_year_and_more'),
+        ("motorcycles", "0003_alter_motorcycle_model_year_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='motorcycle',
-            name='fuel',
-            field=models.CharField(blank=True, choices=[('G', 'Gasoline'), ('F', 'Flex Fuel'), ('A', 'Alcohol'), ('D', 'Diesel'), ('H', 'Hybrid'), ('E', 'Electric')], max_length=1, null=True),
+            model_name="motorcycle",
+            name="fuel",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("G", "Gasoline"),
+                    ("F", "Flex Fuel"),
+                    ("A", "Alcohol"),
+                    ("D", "Diesel"),
+                    ("H", "Hybrid"),
+                    ("E", "Electric"),
+                ],
+                max_length=1,
+                null=True,
+            ),
         ),
     ]

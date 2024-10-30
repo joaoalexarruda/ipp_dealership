@@ -8,8 +8,7 @@ def motorcycle_inventory_update():
     To keep track of the total number of motorcycles in the inventory.
     """
     motorcycle_count = Motorcycle.objects.all().count()
-    MotorcycleInventory.objects.create(
-        motorcycle_count=motorcycle_count)
+    MotorcycleInventory.objects.create(motorcycle_count=motorcycle_count)
 
 
 @receiver(pre_save, sender=MotorcycleManufacturer)
@@ -22,7 +21,7 @@ def motorcycle_pre_save(sender, instance, **kwargs):
     instance.model = instance.model.upper()
     instance.color = instance.color.capitalize()
     if not instance.description:
-        instance.description = 'No description available'
+        instance.description = "No description available"
 
 
 @receiver(post_save, sender=Motorcycle)

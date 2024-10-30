@@ -7,121 +7,187 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cars', '0004_brand_alter_car_brand'),
+        ("cars", "0004_brand_alter_car_brand"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='CarBrand',
+            name="CarBrand",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=200)),
             ],
         ),
         migrations.CreateModel(
-            name='CarInventory',
+            name="CarInventory",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('car_count', models.IntegerField()),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("car_count", models.IntegerField()),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
             ],
             options={
-                'ordering': ['-created_at'],
+                "ordering": ["-created_at"],
             },
         ),
         migrations.CreateModel(
-            name='CarType',
+            name="CarType",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(choices=[('Sedan', 'Sedan'), ('SUV', 'SUV'), ('Hatchback', 'Hatchback'), ('Coupe', 'Coupe'), ('Convertible', 'Convertible'), ('Wagon', 'Wagon'), ('Van', 'Van'), ('Pickup', 'Pickup'), ('Truck', 'Truck'), ('Electric', 'Electric'), ('Hybrid', 'Hybrid'), ('Other', 'Other')], max_length=50)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(
+                        choices=[
+                            ("Sedan", "Sedan"),
+                            ("SUV", "SUV"),
+                            ("Hatchback", "Hatchback"),
+                            ("Coupe", "Coupe"),
+                            ("Convertible", "Convertible"),
+                            ("Wagon", "Wagon"),
+                            ("Van", "Van"),
+                            ("Pickup", "Pickup"),
+                            ("Truck", "Truck"),
+                            ("Electric", "Electric"),
+                            ("Hybrid", "Hybrid"),
+                            ("Other", "Other"),
+                        ],
+                        max_length=50,
+                    ),
+                ),
             ],
         ),
         migrations.RenameField(
-            model_name='car',
-            old_name='quilometers',
-            new_name='kilometrage',
+            model_name="car",
+            old_name="quilometers",
+            new_name="kilometrage",
         ),
         migrations.RemoveField(
-            model_name='car',
-            name='body_type',
+            model_name="car",
+            name="body_type",
         ),
         migrations.RemoveField(
-            model_name='car',
-            name='cylinder_number',
+            model_name="car",
+            name="cylinder_number",
         ),
         migrations.RemoveField(
-            model_name='car',
-            name='factory_year',
+            model_name="car",
+            name="factory_year",
         ),
         migrations.RemoveField(
-            model_name='car',
-            name='gearbox',
+            model_name="car",
+            name="gearbox",
         ),
         migrations.RemoveField(
-            model_name='car',
-            name='value',
+            model_name="car",
+            name="value",
         ),
         migrations.AddField(
-            model_name='car',
-            name='color',
-            field=models.CharField(default='black', max_length=50),
+            model_name="car",
+            name="color",
+            field=models.CharField(default="black", max_length=50),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='car',
-            name='description',
+            model_name="car",
+            name="description",
             field=models.TextField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='car',
-            name='image',
-            field=models.ImageField(blank=True, null=True, upload_to='car_images/'),
+            model_name="car",
+            name="image",
+            field=models.ImageField(blank=True, null=True, upload_to="car_images/"),
         ),
         migrations.AddField(
-            model_name='car',
-            name='price',
+            model_name="car",
+            name="price",
             field=models.DecimalField(decimal_places=2, default=1, max_digits=10),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='car',
-            name='production_year',
+            model_name="car",
+            name="production_year",
             field=models.IntegerField(default=1990),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='car',
-            name='transmission',
-            field=models.CharField(choices=[('M', 'Manual'), ('A', 'Automatic')], default='A', max_length=1),
+            model_name="car",
+            name="transmission",
+            field=models.CharField(
+                choices=[("M", "Manual"), ("A", "Automatic")], default="A", max_length=1
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='car',
-            name='fuel',
-            field=models.CharField(choices=[('G', 'Gasoline'), ('F', 'Flex Fuel'), ('A', 'Alcohol'), ('D', 'Diesel'), ('H', 'Hybrid'), ('E', 'Electric')], max_length=1),
+            model_name="car",
+            name="fuel",
+            field=models.CharField(
+                choices=[
+                    ("G", "Gasoline"),
+                    ("F", "Flex Fuel"),
+                    ("A", "Alcohol"),
+                    ("D", "Diesel"),
+                    ("H", "Hybrid"),
+                    ("E", "Electric"),
+                ],
+                max_length=1,
+            ),
         ),
         migrations.AlterField(
-            model_name='car',
-            name='id',
-            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="car",
+            name="id",
+            field=models.BigAutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
         migrations.AlterField(
-            model_name='car',
-            name='model',
+            model_name="car",
+            name="model",
             field=models.CharField(max_length=100),
         ),
         migrations.AlterField(
-            model_name='car',
-            name='brand',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='car_brand', to='cars.carbrand'),
+            model_name="car",
+            name="brand",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.PROTECT,
+                related_name="car_brand",
+                to="cars.carbrand",
+            ),
         ),
         migrations.AddField(
-            model_name='car',
-            name='car_type',
-            field=models.ForeignKey(default=5, on_delete=django.db.models.deletion.PROTECT, related_name='car_type', to='cars.cartype'),
+            model_name="car",
+            name="car_type",
+            field=models.ForeignKey(
+                default=5,
+                on_delete=django.db.models.deletion.PROTECT,
+                related_name="car_type",
+                to="cars.cartype",
+            ),
             preserve_default=False,
         ),
         migrations.DeleteModel(
-            name='Brand',
+            name="Brand",
         ),
     ]

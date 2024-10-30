@@ -21,7 +21,7 @@ def car_pre_save(sender, instance, **kwargs):
     instance.model = instance.model.upper()
     instance.color = instance.color.capitalize()
     if not instance.description:
-        instance.description = 'No description available'
+        instance.description = "No description available"
 
 
 @receiver(post_save, sender=Car)

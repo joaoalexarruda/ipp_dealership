@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('motorcycles', '0002_remove_motorcycleinventory_motorcycle_total_value'),
+        ("motorcycles", "0002_remove_motorcycleinventory_motorcycle_total_value"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='motorcycle',
-            name='model_year',
+            model_name="motorcycle",
+            name="model_year",
             field=models.IntegerField(blank=True, null=True),
         ),
         migrations.AlterField(
-            model_name='motorcycle',
-            name='production_year',
+            model_name="motorcycle",
+            name="production_year",
             field=models.IntegerField(default=1990),
             preserve_default=False,
         ),
