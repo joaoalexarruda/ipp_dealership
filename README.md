@@ -16,7 +16,7 @@ It's a work in progress and more features will be added in the future. The main 
 
 - Django
 - Django REST Framework
-- SQLite
+- PostgreSQL
 - HTML
 - CSS (Bootstrap)
 
